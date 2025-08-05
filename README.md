@@ -75,14 +75,14 @@ Please, type:
 Examples:
 
 ```
-drive 64 -64
-halt
-camera 45
-light 1
-light 0
-test 1
-test 0
-echo 1
-echo 0
-reset
+**drive 64 -64**
+**halt**
+**camera** 45
+**light** 1
+**light** 0
+**test** 1
+**test** 0
+**echo** 1
+**echo** 0
+**reset**
 ```
