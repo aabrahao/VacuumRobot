@@ -5,7 +5,7 @@ Vacuum robot for Hanford double shell thanks annulus
 **Applied Research Center**  
 **Florida International University**  
 Anthony Abrahao <aabrahao@fiu.edu>  
-Cosme Vasco <cvasco@fiu.edu>
+Cosme Vasco <cvasco@fiu.edu>  
 Miami, 2025   
 
 # System
