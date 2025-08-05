@@ -8,10 +8,21 @@ Anthony Abrahao <aabrahao@fiu.edu>
 Cosme Vasco <cvasco@fiu.edu>  
 Miami, 2025   
 
-# Applicatons
+# Applications
 
-- **Bridge**: Raspiberry Pi C++ code
-- **Firmware**: Microcontroller code
+| **Application** | **Description**               |
+|------------------|-------------------------------|
+| **Bridge**       | Raspberry Pi C++ code         |
+| **Firmware**     | Microcontroller code          |
+
+
+# Robot Microcontroller
+
+| **Component**         | **Specification**              |
+|-----------------------|--------------------------------|
+| **Microcontroller**   | Teensy 4.1                     |
+| **Embedded Computer** | Raspberry Pi 5                 |
+| **Operating System**  | Ubuntu Server 24.02            |
 
 # Firmware dependencies
 
