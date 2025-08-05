@@ -74,7 +74,7 @@ Please, type:
 
 Examples:
 
-```bash
+```
 drive 64 -64
 halt
 camera 45
