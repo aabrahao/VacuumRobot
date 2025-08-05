@@ -72,7 +72,7 @@ Please, type:
 | `test on/off`     | Toggle microcontroller’s built-in LED                          | `1` = On, `0` = Off           |
 
 
-**Examples:**
+Examples:
 
 ```bash
 drive 64 -64
