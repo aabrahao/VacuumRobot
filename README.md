@@ -4,11 +4,18 @@ Vacuum robot for Hanford double shell thanks annulus
 
 **Applied Research Center**  
 **Florida International University**  
-Anthony Abrahao <aabrahao@fiu.edu>  
-Cosme Vasco <cvasco@fiu.edu>  
 Miami, 2025   
 
-| **Application** | **Description**               |
+# Developers
+
+| **Developer**      | **Email** |
+|----------------|--------|
+| Anthony Abrahao | <aabrahao@fiu.edu> |  
+| Cosme Vasco | <cvasco@fiu.edu> |
+
+# System
+
+| **Application** | **Description**                |
 |------------------|-------------------------------|
 | **Bridge**       | Raspberry Pi C++ code         |
 | **Firmware**     | Microcontroller code          |

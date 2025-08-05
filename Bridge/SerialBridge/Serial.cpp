@@ -4,7 +4,6 @@ Serial::Serial(const std::string &port, Serial::Interpreter interpreter )
     : m_ioservice(),
       m_serial(m_ioservice, "/dev/ttyACM0"),
       m_thread(&Serial::reading, this),
-      //m_thread_running(true),
       m_interpreter(interpreter) {
     m_serial.set_option(boost::asio::serial_port_base::baud_rate(115200));
     m_serial.set_option(boost::asio::serial_port::flow_control(boost::asio::serial_port::flow_control::none));
@@ -14,7 +13,6 @@ Serial::Serial(const std::string &port, Serial::Interpreter interpreter )
 }
 
 Serial::~Serial() {
-    //m_thread_running.store(false);
     if (m_serial.is_open())
         m_serial.close();
 }
@@ -31,7 +29,6 @@ std::string Serial::read() {
 }
 
 void Serial::reading(void) {
-    //while (m_thread_running)
     for(;;)
         m_interpreter( read() );
 }

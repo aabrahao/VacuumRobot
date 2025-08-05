@@ -60,8 +60,9 @@ int main(int argc, char *argv[]) {
     while (true) {
         std::cout << "?> ";
         std::getline(std::cin, cmd);
-        if (cmd == "bye")
+        if (cmd == "bye") {
             break;
+        }
         serial.write(cmd);
     }
     serial.write("reset");

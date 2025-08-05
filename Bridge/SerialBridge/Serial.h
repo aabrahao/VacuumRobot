@@ -25,7 +25,6 @@ private:
     boost::asio::io_service m_ioservice;
     boost::asio::serial_port m_serial;
     std::thread m_thread;
-    //std::atomic<bool> m_thread_running;
     Interpreter m_interpreter;
 };
 
