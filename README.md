@@ -59,15 +59,18 @@ cmake ..
 
 **Type:** 
 
-- drive left right: velocities from -127 to 127
-- halt: stop motor
-- camera angle: aim front camera at angle in degrees
-- light on/off: turn front camera light on (1) and off (0)
-- reset: restore initial conditions
-- info: send firmware information
-- help: send defined commands
-- echo on/off: turn message echo on (1) and off (0)
-- test on/off: turn microcontroller builtin led on (1) and off (0)
+| **Command**       | **Description**                                                | **Values / Parameters**      |
+|-------------------|----------------------------------------------------------------|-------------------------------|
+| `drive left right`| Set motor velocities for left and right                        | Range: -127 to 127            |
+| `halt`            | Stop the motor                                                 | None                          |
+| `camera angle`    | Aim front camera to a specific angle                           | Angle in degrees              |
+| `light on/off`    | Turn front camera light on or off                              | `1` = On, `0` = Off           |
+| `reset`           | Restore system to initial conditions                           | None                          |
+| `info`            | Send firmware information                                      | None                          |
+| `help`            | Send list of defined commands                                  | None                          |
+| `echo on/off`     | Enable or disable message echo                                 | `1` = On, `0` = Off           |
+| `test on/off`     | Toggle microcontroller’s built-in LED                          | `1` = On, `0` = Off           |
+
 
 **Examples:**
 
