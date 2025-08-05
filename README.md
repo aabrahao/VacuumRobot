@@ -1,6 +1,7 @@
 # VacuumRobot
 
-Hanford vacuum robot  
+Vacuum robot for Hanford double shell thanks annulus
+
 Applied Research Center  
 Florida International University  
 Anthony Abrahao <aabrahao@fiu.edu>  
@@ -54,32 +55,31 @@ cmake ..
 ./serial_bridge
 ```
 
+# Firmware commands
 
-void help(void) {
-    std::string s {
-        "===========================\n"
-        "Firmware commands:\n"
-        "drive left right: velocities from -127 to 127\n"
-        "halt: stop motor\n"
-        "camera angle: aim front camera at angle in degrees\n"
-        "light on: turn front camera light on (1) and off (0)\n"
-        "reset: restore initial conditions\n"
-        "info: send firmware information\n"
-        "help: send defined commands\n"
-        "echo on: turn message echo on (1) and off (0)\n"
-        "test on: turn microcontroller builtin led on (1) and off (0)\n"
-        "\n"
-        "===========================\n"
-        "Examples:\n"
-        "drive 64 -64\n"
-        "halt\n"
-        "camera 45\n"
-        "light 1\n"
-        "light 0\n"
-        "test 1\n"
-        "test 0\n"
-        "echo 1\n"
-        "echo 0\n"
-        "reset\n"
-    };
+**Type:** 
 
+- drive left right: velocities from -127 to 127
+- halt: stop motor
+- camera angle: aim front camera at angle in degrees
+- light on/off: turn front camera light on (1) and off (0)
+- reset: restore initial conditions
+- info: send firmware information
+- help: send defined commands
+- echo on/off: turn message echo on (1) and off (0)
+- test on/off: turn microcontroller builtin led on (1) and off (0)
+
+**Examples:**
+
+```bash
+drive 64 -64
+halt
+camera 45
+light 1
+light 0
+test 1
+test 0
+echo 1
+echo 0
+reset
+```
