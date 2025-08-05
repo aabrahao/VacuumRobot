@@ -1,9 +1,12 @@
 # VacuumRobot
 Hanford vacuum robot
 
-**Bridge**: Raspiberry Pi C++ code
+# Applicatons
 
-**Firmware**: Microcontroller code
+- **Bridge**: Raspiberry Pi C++ code
+- **Firmware**: Microcontroller code
+
+# Firmware dependencies
 
 The firmware requires the following libraries:
 
@@ -34,4 +37,16 @@ A dialog box will appear. Browse to the location where you saved the downloaded 
 **Verification:**
 
 The Arduino IDE will now add the library to your installation. You can verify the installation by going to Sketch > Include Library again and checking if "RoboClaw" appears in the list of available libraries.
+
+# Compiling Bridge
+
+```bash
+cd Bridge/SerialBridge
+mkdir build
+cd build
+cmake ..
+./serial_bridge
+```
+
+# Firmware commands
 
