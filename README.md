@@ -8,15 +8,10 @@ Anthony Abrahao <aabrahao@fiu.edu>
 Cosme Vasco <cvasco@fiu.edu>  
 Miami, 2025   
 
-# Applications
-
 | **Application** | **Description**               |
 |------------------|-------------------------------|
 | **Bridge**       | Raspberry Pi C++ code         |
 | **Firmware**     | Microcontroller code          |
-
-
-# Robot Microcontroller
 
 | **Component**         | **Specification**              |
 |-----------------------|--------------------------------|
@@ -63,7 +58,7 @@ cd Bridge/SerialBridge
 mkdir build
 cd build
 cmake ..
-./serial_bridge
+./bridge_serial
 ```
 
 # Firmware commands
