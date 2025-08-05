@@ -4,14 +4,9 @@ Vacuum robot for Hanford double shell thanks annulus
 
 **Applied Research Center**  
 **Florida International University**  
+Anthony Abrahao <aabrahao@fiu.edu>
+Cosme Vasco <cvasco@fiu.edu>
 Miami, 2025   
-
-# Developers
-
-| **Developer**      | **Email** |
-|----------------|--------|
-| Anthony Abrahao | <aabrahao@fiu.edu> |  
-| Cosme Vasco | <cvasco@fiu.edu> |
 
 # System
 
@@ -25,6 +20,48 @@ Miami, 2025
 | **Microcontroller**   | Teensy 4.1                     |
 | **Embedded Computer** | Raspberry Pi 5                 |
 | **Operating System**  | Ubuntu Server 24.02            |
+
+# Compiling Bridge
+
+```bash
+cd Bridge/SerialBridge
+mkdir build
+cd build
+cmake ..
+./bridge_serial
+```
+
+# Firmware commands
+
+Please, type:
+
+| **Command**       | **Description**                                                | **Values / Parameters**      |
+|-------------------|----------------------------------------------------------------|-------------------------------|
+| `drive left right`| Set motor velocities for left and right                        | Range: -127 to 127            |
+| `halt`            | Stop the motor                                                 | None                          |
+| `camera angle`    | Aim front camera to a specific angle                           | Angle in degrees              |
+| `light on/off`    | Turn front camera light on or off                              | `1` = On, `0` = Off           |
+| `reset`           | Restore system to initial conditions                           | None                          |
+| `info`            | Send firmware information                                      | None                          |
+| `help`            | Send list of defined commands                                  | None                          |
+| `echo on/off`     | Enable or disable message echo                                 | `1` = On, `0` = Off           |
+| `test on/off`     | Toggle microcontroller’s built-in LED                          | `1` = On, `0` = Off           |
+
+
+Examples:
+
+```
+drive 64 -64
+halt
+camera 45
+light 1
+light 0
+test 1
+test 0
+echo 1
+echo 0
+reset
+```
 
 # Firmware dependencies
 
@@ -58,44 +95,3 @@ A dialog box will appear. Browse to the location where you saved the downloaded 
 
 The Arduino IDE will now add the library to your installation. You can verify the installation by going to Sketch > Include Library again and checking if "RoboClaw" appears in the list of available libraries.
 
-# Compiling Bridge
-
-```bash
-cd Bridge/SerialBridge
-mkdir build
-cd build
-cmake ..
-./bridge_serial
-```
-
-# Firmware commands
-
-Please, type: 
-
-| **Command**       | **Description**                                                | **Values / Parameters**      |
-|-------------------|----------------------------------------------------------------|-------------------------------|
-| `drive left right`| Set motor velocities for left and right                        | Range: -127 to 127            |
-| `halt`            | Stop the motor                                                 | None                          |
-| `camera angle`    | Aim front camera to a specific angle                           | Angle in degrees              |
-| `light on/off`    | Turn front camera light on or off                              | `1` = On, `0` = Off           |
-| `reset`           | Restore system to initial conditions                           | None                          |
-| `info`            | Send firmware information                                      | None                          |
-| `help`            | Send list of defined commands                                  | None                          |
-| `echo on/off`     | Enable or disable message echo                                 | `1` = On, `0` = Off           |
-| `test on/off`     | Toggle microcontroller’s built-in LED                          | `1` = On, `0` = Off           |
-
-
-Examples:
-
-```
-drive 64 -64
-halt
-camera 45
-light 1
-light 0
-test 1
-test 0
-echo 1
-echo 0
-reset
-```
