@@ -1,5 +1,11 @@
 # VacuumRobot
+
 Hanford vacuum robot
+Applied Research Center
+Florida International University
+Anthony Abrahao <aabrahao@fiu.edu>
+Cosme Vasco <cvasco@fiu.edu>
+Miami, 2025\n" 
 
 # Applicatons
 
@@ -48,5 +54,32 @@ cmake ..
 ./serial_bridge
 ```
 
-# Firmware commands
+
+void help(void) {
+    std::string s {
+        "===========================\n"
+        "Firmware commands:\n"
+        "drive left right: velocities from -127 to 127\n"
+        "halt: stop motor\n"
+        "camera angle: aim front camera at angle in degrees\n"
+        "light on: turn front camera light on (1) and off (0)\n"
+        "reset: restore initial conditions\n"
+        "info: send firmware information\n"
+        "help: send defined commands\n"
+        "echo on: turn message echo on (1) and off (0)\n"
+        "test on: turn microcontroller builtin led on (1) and off (0)\n"
+        "\n"
+        "===========================\n"
+        "Examples:\n"
+        "drive 64 -64\n"
+        "halt\n"
+        "camera 45\n"
+        "light 1\n"
+        "light 0\n"
+        "test 1\n"
+        "test 0\n"
+        "echo 1\n"
+        "echo 0\n"
+        "reset\n"
+    };
 
