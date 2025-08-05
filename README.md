@@ -1,11 +1,11 @@
 # VacuumRobot
 
-Hanford vacuum robot
-Applied Research Center
-Florida International University
-Anthony Abrahao <aabrahao@fiu.edu>
-Cosme Vasco <cvasco@fiu.edu>
-Miami, 2025\n" 
+Hanford vacuum robot  
+Applied Research Center  
+Florida International University  
+Anthony Abrahao <aabrahao@fiu.edu>  
+Cosme Vasco <cvasco@fiu.edu>  
+Miami, 2025   
 
 # Applicatons
 
