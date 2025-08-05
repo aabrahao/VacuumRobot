@@ -2,6 +2,7 @@
 Hanford vacuum robot
 
 **Bridge**: Raspiberry Pi C++ code
+
 **Firmware**: Microcontroller code
 
 The firmware requires the following libraries:
