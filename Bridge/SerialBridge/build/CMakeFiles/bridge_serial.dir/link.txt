@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/bridge_serial.dir/main.cpp.o CMakeFiles/bridge_serial.dir/Serial.cpp.o -o bridge_serial 

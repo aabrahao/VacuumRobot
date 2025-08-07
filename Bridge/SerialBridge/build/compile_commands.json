@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/bridge_serial.dir/main.cpp.o -c /home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/main.cpp",
+  "file": "/home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/main.cpp",
+  "output": "CMakeFiles/bridge_serial.dir/main.cpp.o"
+},
+{
+  "directory": "/home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/bridge_serial.dir/Serial.cpp.o -c /home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/Serial.cpp",
+  "file": "/home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/Serial.cpp",
+  "output": "CMakeFiles/bridge_serial.dir/Serial.cpp.o"
+}
+]

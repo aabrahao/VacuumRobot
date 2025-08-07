@@ -5,27 +5,33 @@
 #include <functional>
 #include <boost/asio.hpp>
 
-class Echo {
-public:
-    void operator()(const std::string &message) const {
-        std::cout << "arduino>" << message << std::endl;
-    }
-};
+// Default message received callback!!!
+inline void echo(const std::string &message) {
+    std::cout << "arduino>" << message << std::endl;
+}
 
 class Serial {
 public:
-    using Interpreter = std::function<void(const std::string)>; 
-    explicit Serial(const std::string &port, Interpreter interpreter = Echo());
+    explicit Serial(
+        const std::string &port,
+        std::function<void(const std::string)> callback = echo, 
+        int baud_rate = 115200);
     ~Serial();
     void write(const std::string &message);
-    std::string read();
 protected:
-    void reading(void);
+    // Asyncronous reading!!!!
+    void readingStart();
+    void readingStop();
+    void read();
 private:
+    boost::asio::io_context m_iocontext;
     boost::asio::io_service m_ioservice;
     boost::asio::serial_port m_serial;
+    std::function<void(const std::string)> m_callback;
+    boost::asio::streambuf m_buffer;
     std::thread m_thread;
-    Interpreter m_interpreter;
+    std::atomic<bool> m_running;
+    std::atomic<bool> m_reading;
 };
 
 #endif

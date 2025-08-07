@@ -1,0 +1,3 @@
+/home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/build/CMakeFiles/bridge_serial.dir
+/home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/build/CMakeFiles/edit_cache.dir
+/home/abrahao/Projects/Arc/Vacuum/VacuumRobot/Bridge/SerialBridge/build/CMakeFiles/rebuild_cache.dir
