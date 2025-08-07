@@ -20,10 +20,8 @@ Serial::Serial(const std::string& port, MessageCallback onMessage, ErrorCallback
 
 Serial::~Serial() {
     stopReading();
-    if (m_port.is_open()) {
-        boost::system::error_code ec;
-        m_port.close(ec);
-    }
+    if (m_port.is_open()) 
+        m_port.close();
 }
 
 void Serial::startReading() {
