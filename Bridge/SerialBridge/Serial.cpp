@@ -39,15 +39,12 @@ void Serial::stopReading() {
 }
 
 void Serial::send(const std::string& message) {
-    // Post to the IO context thread for thread safety
-    boost::asio::post(m_context, [this, message]() {
-        try {
-            boost::asio::write(m_port, boost::asio::buffer(message + '\n'));
-        } catch (const boost::system::system_error& e) {
-            if (m_onError)
-                m_onError("Write failed: " + std::string(e.what()));
-        }
-    });
+    try {
+        boost::asio::write(m_port, boost::asio::buffer(message + '\n'));
+    } catch (const boost::system::system_error& e) {
+        if (m_onError)
+            m_onError("Write failed: " + std::string(e.what()));
+    }
 }
 
 bool Serial::connected() const {

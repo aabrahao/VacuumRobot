@@ -14,7 +14,7 @@ public:
     using ErrorCallback = std::function<void(const std::string&)>;
     // Default callbacks
     static void messageCallback(const std::string& message) {
-        std::cout << "arduino>" << message << std::endl;
+        std::cout << "Firmware>" << message << std::endl;
     }
     static void errorCallback(const std::string& error) {
         std::cerr << "Serial error: " << error << std::endl;

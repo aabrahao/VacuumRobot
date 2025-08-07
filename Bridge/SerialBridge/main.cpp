@@ -16,7 +16,8 @@ void info(void) {
 }
 
 void callback(const std::string &message) {
-        std::cout << "Firmware replied: " << message << std::endl;
+    std::cout << "Firmware replied: " << message << std::endl
+              << "?> " << std::flush;
 }
 
 int main(int argc, char *argv[]) {
