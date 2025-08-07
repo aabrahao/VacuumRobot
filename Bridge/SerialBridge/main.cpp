@@ -15,23 +15,23 @@ void info(void) {
     std::cout << s << std::endl;
 }
 
-void receivedCallback(const std::string &message) {
+void callback(const std::string &message) {
         std::cout << "Firmware replied: " << message << std::endl;
 }
 
 int main(int argc, char *argv[]) {
-    Serial serial("/dev/ttyACM0", receivedCallback);
+    Serial serial("/dev/ttyACM0", callback);
     info(); 
-    serial.write("reset");
+    serial.send("reset");
     std::string cmd;
     while (true) {
         std::cout << "?> ";
         std::getline(std::cin, cmd);
         if (cmd == "bye")
             break;
-        serial.write(cmd);
+        serial.send(cmd);
     }
-    serial.write("reset");
+    serial.send("reset");
     std::cout << "Bye!" << std::endl;
     return 0;
 }

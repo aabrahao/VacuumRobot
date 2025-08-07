@@ -3,35 +3,55 @@
 
 #include <iostream>
 #include <functional>
+#include <thread>
+#include <atomic>
+#include <stdexcept>
 #include <boost/asio.hpp>
-
-// Default message received callback!!!
-inline void echo(const std::string &message) {
-    std::cout << "arduino>" << message << std::endl;
-}
 
 class Serial {
 public:
+    using MessageCallback = std::function<void(const std::string&)>;
+    using ErrorCallback = std::function<void(const std::string&)>;
+
+    // Default callbacks
+    static void messageCallback(const std::string& message) {
+        std::cout << "arduino>" << message << std::endl;
+    }
+
+    static void errorCallback(const std::string& error) {
+        std::cerr << "Serial error: " << error << std::endl;
+    }
+
     explicit Serial(
-        const std::string &port,
-        std::function<void(const std::string)> callback = echo, 
-        int baud_rate = 115200);
+        const std::string& port,
+        MessageCallback onMessage = messageCallback,
+        ErrorCallback onError = errorCallback,
+        int baud = 115200);
+    
     ~Serial();
-    void write(const std::string &message);
+    
+    // Non-copyable but movable
+    Serial(const Serial&) = delete;
+    Serial& operator=(const Serial&) = delete;
+    Serial(Serial&&) = default;
+    Serial& operator=(Serial&&) = default;
+
+    void send(const std::string& message);
+    bool connected() const;
+
 protected:
-    // Asyncronous reading!!!!
-    void readingStart();
-    void readingStop();
-    void read();
+    // Asynchronous reading methods
+    void startReading();
+    void stopReading();
+    void doRead();
+
 private:
-    boost::asio::io_context m_iocontext;
-    boost::asio::io_service m_ioservice;
-    boost::asio::serial_port m_serial;
-    std::function<void(const std::string)> m_callback;
+    boost::asio::io_context m_context;
+    boost::asio::serial_port m_port;
+    MessageCallback m_onMessage;
+    ErrorCallback m_onError;
     boost::asio::streambuf m_buffer;
     std::thread m_thread;
-    std::atomic<bool> m_running;
-    std::atomic<bool> m_reading;
 };
 
 #endif
